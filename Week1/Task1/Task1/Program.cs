@@ -15,7 +15,7 @@ namespace Task1
             string s = Console.ReadLine();//creating another  array by writing array numbers
             string[] arr = s.Split(); //splitting by space;
 
-            for (int i = 0; i < array1.Length; i++)
+            for (int i = 0; i < array1.Length; i++)//starts from 0 ends at arr size
             {
 
                 array1[i] = int.Parse(arr[i]); //Transfering to first array
