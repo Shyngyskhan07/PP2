@@ -22,21 +22,28 @@ namespace Task1
 
 
             }
+           
             int NumOfPrime = array1.Length; //Firstly size of array for substract not prime numbers
             for (int i = 0; i < array1.Length; i++)
             {
-                if (array1[i] == 1)//1 is not a prime number 
-                    NumOfPrime--;  //We substract 1 because 1 is not a prime
+                int final = 0;                    //new int to find final size
 
-                for (int j = 2; j <= array1[i] / 2; j++)//We start with 2 because any number divides by 1
-                {                                         //We run up to half of each number
+                if (array1[i] == 1)          //1 is not a prime number 
+                {                  
+                    final++;  //We add 1 because 1 is not a prime
+                    
+                }
+                for (int j = 2; j <= Math.Sqrt(array1[i]); j++)//We start with 2 because any number divides by 1
+                {                                         //We run up to sqrt of each number
 
-                    if (array1[i] % j == 0)//If our number divides by number beside 2 and array1[i]
+                    if (array1[i] % j == 0)//If our number divides by number beside 2 and sqrt (array1[i])
                     {
-                        NumOfPrime--;   //We substract 1 because we found a number which is not a prime
+                        final++;            //Add +1
 
                     }
                 }
+                if (final > 0)
+                    NumOfPrime--;                     //substract 1
             }
             Console.WriteLine(NumOfPrime);  //Outputs Number of Primes
             for (int i = 0; i < array1.Length; i++) //starts at 0 and ends at length of array
@@ -46,8 +53,8 @@ namespace Task1
                 {
                     Dividers++; // add 1
                 }
-                for (int j = 2; j <= array1[i] / 2; j++)  //we again do the same process starts in 2 and ends in half of each number 
-                    if (array1[i] % j == 0)//If our number divides by number beside 2 and array1[i]/2
+                for (int j = 2; j <= Math.Sqrt(array1[i]) ; j++)  //we again do the same process starts in 2 and ends in sqrt of each number 
+                    if (array1[i] % j == 0)//If our number divides by number beside 2 and  sqrt(array1[i])
 
                         Dividers++; //add 1
 
