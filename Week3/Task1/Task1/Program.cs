@@ -54,7 +54,7 @@ namespace Part2
             foreach(FileSystemInfo file in f)                            
             {
                 Color(file, index);                                      //calls method Color
-                Console.WriteLine(file.Name);                            //Output name of file
+                Console.WriteLine(index+1+". "+file.Name);                            //Output name of file
                 index++;                                                  //add 1
 
             }
