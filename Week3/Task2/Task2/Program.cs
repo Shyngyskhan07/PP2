@@ -89,7 +89,7 @@ namespace Task2
             foreach(FileSystemInfo file in f)
             {
                 Color(file, index);
-                Console.WriteLine(file.Name);
+                Console.WriteLine(index+1+". "+file.Name);
                 index++;
 
             }
